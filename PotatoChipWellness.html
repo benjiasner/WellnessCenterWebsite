@@ -1,0 +1,52 @@
+<div id="wrapall">
+  <h1>So you're unsure of your potato chip habits...</h1>
+  <p>Take this quiz!</p>
+
+<form id="benjiquiz">
+    <h2>Do you like potato chips?</h2>
+    <label><input type="radio" name="q1" value="c1">
+      Yes
+    </label><br />
+    <label><input type="radio" name="q1" value="c2">
+      No
+    </label><br />
+
+  <p id="answer">here</p>
+
+    <button type="button" onclick='document.getElementById("answer").innerHTML = tabulateAnswers()'>Submit Your Answer</button>
+  </form>
+
+</div>
+
+<script>
+function tabulateAnswers() {
+    var Yes = 0; //initialize variables
+    var No = 0;
+    var yeet= "You do like potato chips";
+    var naw = "You do not like potato chips";
+    var choices = document.getElementsByTagName('input');
+
+    //loop through both inputs
+    for (j=0; j<choices.length; j++) {
+      if (choices[j].checked) {
+        if(choices[j].value = 'c1') {
+          Yes = Yes + 1;
+        }
+        if(choices[j].value = 'c2') {
+          No = No + 1;
+        }
+      }
+    }
+
+    var MaxScore = Math.max(Yes, No);
+
+    if(Yes = MaxScore) {
+      return yeet;
+    }
+    else {
+      return yaw;
+    }
+
+}
+
+  </script>
